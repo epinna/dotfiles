@@ -16,3 +16,6 @@ set mouse=
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=2
 set softtabstop=2
+
+" Show invisible characters, if triggered with :set list!
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
