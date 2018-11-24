@@ -1,0 +1,2 @@
+# Prevent SSH timeout sending a "null packet" every 120 seconds 
+ServerAliveInterval 120
