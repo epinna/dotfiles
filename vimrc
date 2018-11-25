@@ -8,6 +8,7 @@ syntax on
 
 " Better command-line completion
 set wildmenu
+set wildmode=list:longest,full
 
 " Disable use of the mouse 
 set mouse=
