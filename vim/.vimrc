@@ -20,3 +20,6 @@ set softtabstop=2
 
 " Show invisible characters, if triggered with :set list!
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" It hides buffers instead of closing them.
+set hidden
