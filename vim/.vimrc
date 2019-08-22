@@ -24,3 +24,9 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 " It hides buffers instead of closing them.
 set hidden
+
+" Create and use the vim backup folders.
+silent execute 'mkdir -p ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo'
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
