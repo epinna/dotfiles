@@ -1,0 +1,23 @@
+[user]
+    name = Emilio Pinna
+    email = emilio.pinn@gmail.com
+[color]
+    ui = auto
+[alias]
+    g = grep -i -n
+    a = add
+    au = add -u
+    ap = add -p
+    c = commit -v
+    ca = commit --amend
+    d = diff
+    dw = diff --word-diff
+    dc = diff --cached
+    r = reset
+    l = log --branches --remotes --tags --graph --oneline --decorate --notes HEAD
+    s = status -s
+    cp = commit --allow-empty-message -m ''
+[push]
+    default = simple
+[init]
+    defaultBranch = master
