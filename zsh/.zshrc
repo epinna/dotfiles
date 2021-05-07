@@ -140,17 +140,17 @@ git_info() {
   fi
 
   local -a GIT_INFO
-  GIT_INFO+=( "%{$fg[cyan]%}±" )
+  GIT_INFO+=( "%{$fg[blue]%}±" )
   [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-  GIT_INFO+=( "%{$fg[cyan]%}$GIT_LOCATION%{$reset_color%}" )
+  GIT_INFO+=( "%{$fg[blue]%}$GIT_LOCATION%{$reset_color%}" )
   echo "${(j: :)GIT_INFO}"
 
 }
 
 # Use ❯ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
-PS1="\$(ssh_info)%{$fg[magenta]%}%~%u \$(git_info) %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} "
+PS1="\$(ssh_info)%{$fg[green]%}%~%u \$(git_info) %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} "
 
 # *** HOMEBREW ***
 
