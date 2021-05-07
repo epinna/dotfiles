@@ -9,20 +9,6 @@ function command_exists() {
   hash "$1" &> /dev/null
 }
 
-# When connecting via ssh, always [re]attach to a terminal manager
-# Adapted from code found at <http://involution.com/2004/11/17/1-32/> (now offline)
-if command_exists tmux && [ -z $TMUX ]; then
-  if [ "$SSH_TTY" != "" -a "$TERM" -a "$TERM" != "screen" -a "$TERM" != "dumb" ]; then
-    pgrep tmux
-    # $? is the exit code of pgrep; 0 means there was a result (tmux is already running)
-    if [ $? -eq 0 ]; then
-      tmux -u attach -d
-    else
-      tmux -u
-    fi
-  fi
-fi
-
 # *** ZSH-SPECIFIC SETTINGS ***
 
 HISTFILE=~/.zsh_history
