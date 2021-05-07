@@ -1,5 +1,3 @@
-# Josh Dick's .zshrc <https://joshdick.net>
-
 # *** MISC ***
 
 # Clear out and reset PATH in case .zshrc is sourced multiple times in one session (while making changes)
@@ -7,13 +5,9 @@
 export PATH=$(env -i bash --login --norc -c 'echo $PATH')
 
 # Test whether a given command exists
-# Adapted from <http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script/3931779#3931779>
 function command_exists() {
   hash "$1" &> /dev/null
 }
-
-# Include any machine-specific configuration if it exists
-test -e ~/.localrc && . ~/.localrc
 
 # When connecting via ssh, always [re]attach to a terminal manager
 # Adapted from code found at <http://involution.com/2004/11/17/1-32/> (now offline)
@@ -150,7 +144,7 @@ git_info() {
 
 # Use ❯ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
-PS1="\$(ssh_info)%{$fg[green]%}%~%u \$(git_info) %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} "
+PS1="\$(ssh_info)%{$fg[green]%}%~%u \$(git_info) %(?.%{$fg[green]%}.%{$fg[green]%})%(!.#.❯)%{$reset_color%} "
 
 # *** HOMEBREW ***
 
@@ -171,6 +165,12 @@ else
   GIT_DIFF_HIGHLIGHT_PATH=~/.bin/diff-highlight
 fi
 
+# LSCOLORS - Default except for normal directories (first character) to replace hard-to-read blue
+# For details, see manpage for ls
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+#### Environments
+
 # always install npm packages locally
 export NPM_CONFIG_PREFIX="$HOME/.npm"
 export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
@@ -183,14 +183,13 @@ export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin/:/usr/local/opt/findu
 GEM_HOME=~/.gem
 export PATH="$GEM_HOME/bin:$PATH"
 
-# SF development
-sfi() { echo "${PWD##*/}" }
-
-source <(kubectl completion zsh)
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 git config --global tag.sort version:refname
 
 # Add sftools to PATH
 export PATH="$PATH:$HOME/secureflag/sf-shell-utilities/bin"
+
+# Completions 
+#
+source <(kubectl completion zsh)
