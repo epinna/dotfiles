@@ -2,7 +2,7 @@
 
 # customizable
 LIST_DATA="#{session_name} (#{pane_index}) #{pane_current_path}"
-FZF_COMMAND="fzf-tmux -p 70%,70% --delimiter=: --with-nth 4 --color=hl:2"
+FZF_COMMAND="fzf-tmux -p 90%,90% --delimiter=: --with-nth 4 --color=hl:2 --cycle"
 
 # do not change
 TARGET_SPEC="#{session_name}:#{window_id}:#{pane_id}:"
