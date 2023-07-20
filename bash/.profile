@@ -14,3 +14,6 @@ export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
 # always install pip packages locally
 export PIP_USER=yes
 export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin/:$PATH"
+
+# aliases
+alias xcopy="xclip -sel clip"
