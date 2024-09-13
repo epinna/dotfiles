@@ -23,11 +23,11 @@ LP_LOAD_THRESHOLD=60
 
 # Minimal value after which the temperature is displayed (in degrees Celsius)
 # Recommended value is 60
-LP_TEMP_THRESHOLD=60
+LP_TEMP_THRESHOLD=100
 
 # The maximum percentage of the screen width used to display the path
 # Recommended value is 35
-LP_PATH_LENGTH=35
+LP_PATH_LENGTH=25
 
 # How many directories to keep at the beginning of a shortened path
 # Recommended value is 2
