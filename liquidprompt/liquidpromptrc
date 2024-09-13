@@ -157,4 +157,6 @@ LP_DISABLED_VCS_PATH=""
 
 LP_ENABLE_SHLVL=0
 
+LP_ENABLE_DETACHED_SESSIONS=0
+
 # vim: set et sts=4 sw=4 tw=120 ft=sh:
