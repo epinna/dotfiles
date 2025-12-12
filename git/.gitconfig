@@ -20,4 +20,4 @@
 [push]
     default = simple
 [init]
-    defaultBranch = master
+    defaultBranch = main
